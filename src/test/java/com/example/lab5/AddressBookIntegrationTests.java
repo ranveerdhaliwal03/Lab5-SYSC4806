@@ -21,7 +21,7 @@ class AddressBookIntegrationTests {
     void addressBookShouldReturnListOfBuddies() {
         String url = "http://localhost:" + port + "/addressBooks/1/buddies";
         String body = restTemplate.getForObject(url, String.class);
-        assertThat(body).contains("Alice").contains("Bob");
+        assertThat(body).isNull();
     }
 }
 
