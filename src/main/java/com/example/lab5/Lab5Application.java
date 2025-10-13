@@ -17,23 +17,25 @@ public class Lab5Application {
         return new AddressBook();
     }
 
-    @Bean
-    CommandLineRunner init(BuddyInfoRepository buddyRepo, AddressBookRepository bookRepo) {
-        return args -> {
-            BuddyInfo alice = new BuddyInfo("Alice", "123");
-            BuddyInfo bob = new BuddyInfo("Bob", "456");
-
-            AddressBook book = new AddressBook();
-            book.getBuddies().add(alice);
-            book.getBuddies().add(bob);
-
-            bookRepo.save(book);
-
-            System.out.println("=== All AddressBooks ===");
-            bookRepo.findAll().forEach(System.out::println);
-
-            System.out.println("=== All Buddies ===");
-            buddyRepo.findAll().forEach(System.out::println);
-        };
-    }
+//    @Bean
+//    CommandLineRunner init(BuddyInfoRepository buddyRepo, AddressBookRepository bookRepo) {
+//        return args -> {
+//            BuddyInfo alice = new BuddyInfo("Alice", "123");
+//            BuddyInfo bob = new BuddyInfo("Bob", "456");
+//            BuddyInfo kramer = new  BuddyInfo("Kramer", "789");
+//
+//            AddressBook book = new AddressBook();
+//            book.getBuddies().add(alice);
+//            book.getBuddies().add(bob);
+//            book.getBuddies().add(kramer);
+//
+//            bookRepo.save(book);
+//
+//            System.out.println("=== All AddressBooks ===");
+//            bookRepo.findAll().forEach(System.out::println);
+//
+//            System.out.println("=== All Buddies ===");
+//            buddyRepo.findAll().forEach(System.out::println);
+//        };
+//    }
 }

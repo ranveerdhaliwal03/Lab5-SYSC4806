@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Address Book</title>
+    <title>Home</title>
 </head>
 <body>
-<h1 th:text="'Address Book #' + ${book.id}"></h1>
-
-<ul>
-    <li th:each="buddy : ${buddies}">
-        <span th:text="${buddy.name}"></span>
-        (<span th:text="${buddy.phoneNumber}"></span>)
-    </li>
-</ul>
+<h1> Add buddy</h1>
+<form th:action="@{/home}" th:object="${buddy}" method="post">
+    <input type="hidden" name="bookId" th:value="${book.id}" />
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Phone No: <input type="text" th:field="*{phoneNumber}" /></p>
+    <p><input type="submit" value="Submit" /></p>
+</form>
 
 </body>
 </html>

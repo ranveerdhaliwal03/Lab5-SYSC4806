@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address Book</title>
+</head>
+<body>
+<h1 th:text="'Address Book #' + ${book.id}"></h1>
+<ul>
+    <li th:each="buddy : ${buddies}">
+        <span th:text="${buddy.name}"></span>
+        <span th:text="${buddy.phoneNumber}"></span>
+    </li>
+</ul>
+
+<a th:href="@{/home(id=${book.id})}">Back to Home</a>
+</body>
+</html>
